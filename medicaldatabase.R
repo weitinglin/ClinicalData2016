@@ -346,32 +346,4 @@ if(i>1){
 
 return(Medical_database)
 } # big  function 
-lab_data[data_list[[1]]-1]%>%getlabname()
-##Another Way to Deal with the Data with XML package
-install.packages("XML")
-library(XML)
-library(xml2)
-htm_data<-read_html("testlab.html",encoding = "BIG-5")
-htm_data<-iconv(htm_data,from ="BIG-5",to = "UTF-8")
 
-#xml parse
-htm_parse<-xmlParse(htm_data,encoding="UTF-8")
-htmfiles<-xmlRoot(htm_parse)
-xmlChildren(htmfiles)
-#explore the data structure
-xmlName(htmfiles)
-xmlSize(htmfiles)
-names(htmfiles)
-#digging further
-htmfiles[]
-#parse based on string html
-test<-htmlTreeParse(htm_data,useInternalNodes = T)
-
-#getNodeSet
-notset<-getNodeSet(test,"//table")
-notset_tr<-getNodeSet(htmfiles,"//tr")
-noteset_tr_tt<-getNodeSet(htmfiles,"//tt")
-notset_tr[[8]]
-class(notset_tr)
-noteset_tr_tt[30]
-xmlAttrs(noteset_tr_tt)
