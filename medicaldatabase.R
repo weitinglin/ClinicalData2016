@@ -10,7 +10,7 @@ library(reshape2)
 library(RCurl)
 library(XML)
 #query the help
-?XML
+
 #input data
 raw_data<-readLines("testlab.html",encoding = "BIG-5")
 raw_data_test<-readLines("testlab.html",encoding = "BIG-5")  #for test
